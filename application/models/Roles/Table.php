@@ -27,6 +27,8 @@ class Table extends \Bluz\Db\Table
     const BASIC_MEMBER = 'member';
     const BASIC_ADMIN = 'admin';
 
+    const ADMIN_ID = 1;
+
     /**
      * Table
      *

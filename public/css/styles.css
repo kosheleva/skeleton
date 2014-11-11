@@ -139,3 +139,12 @@ footer {
 }
 
 /*/Bootstrap fix*/
+
+@font-face {
+    font-family: captcha;
+    src: url(../fonts/Static.ttf);
+}
+.captcha {
+    font-family: captcha;
+    font-size: 35px;
+}
