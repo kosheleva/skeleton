@@ -13,6 +13,9 @@ namespace Application\ContactUs;
  */
 class Grid extends \Bluz\Grid\Grid
 {
+    /**
+     * @var string
+     */
     protected $uid = 'contact_us';
 
     /**
@@ -28,8 +31,7 @@ class Grid extends \Bluz\Grid\Grid
         $this->setAdapter($adapter);
         $this->setDefaultLimit(25);
         $this->setAllowOrders(['id', 'name', 'email', 'mark_read', 'mark_answered', 'created', 'updated']);
-        $this->setDefaultOrder('mark_read');
-        $this->setAllowFilters(['name','email', 'mark_read', 'mark_answered']);
+        $this->setAllowFilters(['name', 'email', 'mark_read', 'mark_answered']);
         return $this;
     }
 }

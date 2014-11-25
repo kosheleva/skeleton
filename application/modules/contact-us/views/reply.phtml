@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Bluz\View\View $this
+ */
+?>
+<?php if ($modal == 'true'): ?>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title"><?=__('Reply')?></h4>
+</div>
+<div class="modal-body">
+    <?php echo $this->partial('contact-us/reply.phtml', ['row' => $row])?>
+</div>
+<div class="modal-footer">
+    <a href="#" class="btn btn-default" data-dismiss="modal"><?=__('Close')?></a>
+</div>
+<?php else: ?>
+    <h3 class="page-header">
+        <?=__('Reply page')?>
+    </h3>
+    <?php echo $this->partial('contact-us/reply.phtml', ['row' => $row])?>
+<?php endif; ?>
+
+
+
+

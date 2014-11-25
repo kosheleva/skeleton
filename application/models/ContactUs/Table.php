@@ -32,29 +32,4 @@ class Table extends \Bluz\Db\Table
      */
     protected $primary = array('id');
 
-    /**
-     * update mark_read field
-     *
-     * @param int $id
-     * @param int $value
-     *
-     * @return int
-     */
-    public static function updateRead($id, $value)
-    {
-        return self::update(['mark_read' => $value], ['id' => $id]);
-    }
-
-    /**
-     * update mark_answered field
-     *
-     * @param int $id
-     * @param int $value
-     *
-     * @return int
-     */
-    public static function updateAnswered($id, $value)
-    {
-        return self::update(['mark_answered' => $value], ['id' => $id]);
-    }
 }
