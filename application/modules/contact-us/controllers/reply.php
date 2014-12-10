@@ -12,9 +12,8 @@ return
     /**
      * @param int $id
      * @param string $message
-     * @param string $modal
      */
-    function($id, $message, $modal) use ($view) {
+    function($id, $message) use ($view) {
         /**
          * @var Bootstrap $this
          * @var View $view
@@ -41,7 +40,5 @@ return
                 $row->save();
             }
             $view->row = $row;
-            $view->modal = $modal;
         }
-
     };

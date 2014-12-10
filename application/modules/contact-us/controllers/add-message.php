@@ -9,20 +9,28 @@ use Bluz\Proxy\Messages;
 use Bluz\Controller;
 use Bluz\Proxy\Session;
 use Application\ContactUs\Row;
+use Bluz\Proxy\Layout;
 
 return
     /**
      * @param string $name
      * @param string $email
+     * @param string $subject
      * @param string $message
      * @param string $captcha
      * @return \closure
      */
-    function($name, $email, $message, $captcha) use ($view) {
+    function($name, $email, $subject, $message, $captcha) use ($view) {
         /**
          * @var Bootstrap $this
          * @var View $view
          */
+
+        Layout::breadCrumbs(
+            [
+                __('Contact us')
+            ]
+        );
 
         if (Request::isPost()) {
 
@@ -32,12 +40,14 @@ return
             if ($this->user() != null) {
                 $row->name = $this->user()->login;
                 $row->email = $this->user()->email;
+                $row->subject = $subject;
                 $row->message = $message;
                 $result = $row->save();
             } else {
                 if ($captcha == Session::get('captcha')) {
                     $row->name = $name;
                     $row->email = $email;
+                    $row->subject = $subject;
                     $row->message = $message;
                     $result = $row->save();
                 }

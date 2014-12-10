@@ -18,6 +18,7 @@ use Bluz\Validator\Validator as v;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string $subject
  * @property string $message
  * @property boolean $mark_read
  * @property boolean $mark_answered
@@ -76,10 +77,12 @@ class Row extends \Bluz\Db\Row
     {
         $this->name = html_entity_decode($this->name, ENT_QUOTES);
         $this->email = html_entity_decode($this->email, ENT_QUOTES);
+        $this->subject = html_entity_decode($this->subject, ENT_QUOTES);
         $this->message = html_entity_decode($this->message, ENT_QUOTES);
 
         $this->name = esc($this->name, ENT_QUOTES);
         $this->email = esc($this->email, ENT_QUOTES);
+        $this->subject = esc($this->subject, ENT_QUOTES);
         $this->message = esc($this->message, ENT_QUOTES);
     }
 }

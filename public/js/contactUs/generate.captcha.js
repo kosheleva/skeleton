@@ -1,4 +1,4 @@
-require(['jquery'], function($) {
+define(['jquery'], function($) {
     $('body').on('click', '.generateCaptcha', function() {
         $.get($(this).attr('href'), function(html) {
             var captcha = $(html).find('.captcha').text();
